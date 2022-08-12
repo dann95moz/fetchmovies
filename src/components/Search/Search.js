@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
-
-const Search = () => {
-  const [query, setQuery] = useState("")
-  const handleChange = (e) => { 
-setQuery(e.target.value)}
+import styles from './Search.module.scss'
+const Search = ({ query, setQuery, onUserClick, setResults}) => {
+ 
+  const handleChange = (e) => {
+    setQuery(e.target.value)
+  }
+  const handleClear = (e) => {
+    setQuery('')
+    setResults(null)
+    
+  }
+  
   return (
-    <div>
+    <div className={styles.container}>
       <input
         type="text"
         name={query}
         value={query}
         onChange={(e)=>handleChange(e)}
-    /> </div>
+      />
+      <button onClick={onUserClick}>search</button>
+      <button onClick={handleClear}>clear</button>
+
+    </div>
   )
 }
 

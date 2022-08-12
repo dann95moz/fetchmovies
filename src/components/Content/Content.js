@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Content = () => {
+const Content = ({searchedMovies}) => {
   return (
-    <div>Content</div>
+  <div>
+    {searchedMovies?.map((movie) => {
+      return (
+        <div>
+          <img src={movie.Poster} alt={movie.Title} />
+          <p>{movie.Title}</p>
+          <p>{movie.Year}</p>
+        </div>
+      )
+    })}
+      </div>
   )
 }
 
