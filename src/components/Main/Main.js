@@ -8,7 +8,7 @@ const Main = () => {
     const [query, setQuery] = useState("")
     const [results, setResults] = useState(null)
     const getMoviesData = () => {
-        axios.get(`http://www.omdbapi.com/?s=${query}&apikey=73157ade`)
+        axios.get(`https://www.omdbapi.com/?s=${query}&apikey=73157ade`)
         .then(response=>setResults(response.data.Search))
     }
   return (
